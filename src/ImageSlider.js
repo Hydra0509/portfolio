@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import SliderData from './SliderData'
-import {FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa'
+import {IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io'
+import Lorem from './loremtext'
 
 function ImageSlider({ slides }) {
 	const [current,setCurrent] = useState(0)
@@ -21,18 +22,16 @@ function ImageSlider({ slides }) {
 
 
 return (
-			<div className = "slider">
-			<FaArrowAltCircleLeft className="right-arrow" onClick={prevSlide} />
-			<FaArrowAltCircleRight className="left-arrow" onClick={nextSlide} />
+			<div data-aos="fade-up" className = "slider">
+			<IoIosArrowDropleftCircle className="right-arrow" onClick={prevSlide} />
+			<IoIosArrowDroprightCircle className="left-arrow" onClick={nextSlide} />
 			{SliderData.map((slide, index) => {
 				return (
 
 						<div className={index === current ? 'slide active' : 'slide'} key={index}>
 						{index === current && (<img src={slide.image} alt='beaches' className="image" />)
 						}
-						
 						</div>
-
 					)
 					
 			})}
@@ -42,3 +41,5 @@ return (
 }
 
 export default ImageSlider;
+
+   /* <ImageSlider slides={SliderData} />*/

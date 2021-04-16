@@ -1,23 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Roboto:wght@300&display=swap');
 
 * {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+    background-image: url('./images/gradientbackground.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
 header {
-   background:#001a25;
   width: 100%;
   display:flex;
   justify-content: center;
   color:#ffff;
   margin:0;
-  padding: 80px;
   box-sizing: border-box;
+  background-image: url('./images/pictureskull.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
-  backgroud-position: center center;
+  background-attachment: fixed;
+  backgroud-position: center;
   -webkit-transition: .9s ease;
   transition: .9s ease;
-  height: 500px;
+  height: 950px;
   font-size: 2em;
   font-family: 'Roboto', sans-serif;
   flex-direction: column;
@@ -25,22 +33,26 @@ header {
 }
 
 .p {
+  display: flex;
+  justify-content: center;
+  text-align: center;
    background:transparent;
     animation: fadeIn ease-in  6s;
    -webkit-animation: fadeIn ease-in 6s;
    height: 30px;
+   padding-top: 50px;
+
  }
 
 
 header h1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
     background:transparent;
     animation: fadeIn ease-out 5s;
     -webkit-animation: fadeIn ease-out 5s;
 
-}
-
-header p {
-  width: 200px;
 }
 
 @keyframes fadeIn {
@@ -69,29 +81,40 @@ header p {
 }
 
 body {
-   background:#001a25;
 } 
 
 .bodyContainer .aboutme {
-  font-size: 50px;
-  position: absolute;
-  left: 43%;
-  top: 460px;
-
+  font-size: 80px;
+  width: 500px;
+  left: 40%;
+  position: relative;
+  user-select: none;
+  text-decoration: underline overline;
+  text-underline-offset: 0.35em;
+}
+ .mywork {
+  font-size: 80px;
+  width: 500px;
+  left: 40%;
+  position: relative;
+  user-select: none;
+  text-decoration: underline overline;
+  text-underline-offset: 0.35em;
 }
 
 .bodyContainer {
+  position: relative;
   color: #ffff;
   display: flex;
-  padding: 50px;
-
-}
+  background:transparent;
+ }
 
 .bodyContainer h2 {
   padding: 50px;
   display: flex;
   user-select: none;
   text-align: center;
+  text-shadow: 2px 2px black; 
   }
 
 .bodyContainer img {
@@ -101,23 +124,22 @@ body {
     }
 
 
-
   .navbar {
     justify-content: center;
     position: fixed;
     top: 20px;
-    width: 60px;
-    height: 50%;
-    background:#004360;
+    width: 9px;
+    height: 230px;
+    background:black;
     transition:0.5s;
     overflow: hidden;
     border-radius: 20px;
-    z-index:7;
+    z-index:7;  
   }
 
   .navbar:hover {
-    width: 200px;
-    height: 469px;
+    width: 60px;
+    height: 230px;
   }
 
   .navbar ul {
@@ -128,30 +150,25 @@ body {
   }
 
   .navbar ul li {
-        left: -40px;
+
     top: 15px;
     font-weight: bold;
     position: relative;
     width: 100%;
     list-style: none;
-    background:#004360;
-  }
-
-  .navbar ul li:hover  {
-    background:#2180CB;
+    background:black;
   }
 
   .navbar ul li a {
     position: relative;
     display: block;
-    width: 100%;
     display: flex;
     text-decoration: none;
     color: #ffff;
   }
 
   .navbar ul li a .icon {
-    font-size: 25px;
+    font-size: 50px;
     position: relative;
     display: block;
     min-width: 60px;
@@ -160,51 +177,36 @@ body {
     text-align: center;
   }
 
-  .navbar ul li a .title {
-    position: relative;
-    display: block;
-    padding: 0 10px;
-    height: 100px;
-    line-height: 90px;
-    text-align: start;
-    white-space: nowrap;
-    font-size: 20px;
-  }
+.navbar ul li a .icon:hover {
+  transform: scale(1.1);
+}
+
+
 
   .slider {
+    top: 150px;
     position: relative;
-    height: 100vh;
     display: flex;
-    width:650px;
+    width:45%;
     justify-content: center;
     align-self: center;
-    left: 1050px;
+    left: 520px;
     user-select: none;
+    background:transparent;
   }
 
   .image {
-    width: 600px;
+    width: 900px;
     height: 500px;
     border-radius: 10px;
   }
 
-  .loremtext {
-  box-sizing: border-box;
-  position: relative;
-  text-align: center;
-  color: #ffff;
-  width: 500px;
-  margin: 150px;
-  top: -1050px;
-  font-size: 25px;
-  user-select: none;
-}
 
   .right-arrow {
     position: absolute;
-    top: 25%;
-    right:650px;
-    font-size: 3rem;
+    top: 45%;
+    right:950px;
+    font-size: 4rem;
     color:white;
     z-index: 10;
     cursor: pointer;
@@ -215,9 +217,9 @@ body {
 
     .left-arrow {
     position: absolute;
-    top: 25%;
-    left:650px;
-    font-size: 3rem;
+    top: 45%;
+    left:950px;
+    font-size: 4rem;
     color:white;
     z-index: 10;
      cursor: pointer;
@@ -226,7 +228,7 @@ body {
   }
 
   .slide {
-    opacity: 0;
+    opacity: 1;
     transition-duration: 1s ease;
   }
 
@@ -235,6 +237,25 @@ body {
     transition-duration: 1s;
     transform: scale(1.05)
   }
+
+    .loremtext {
+    position: absolute;
+  box-sizing: border-box;
+  position: relative;
+  text-align: center;
+  color: #ffff;
+  width: 500px;
+  margin: 150px;
+  left: -500px;
+  font-size: 25px;
+  user-select: none;
+}
+
+.footer {
+  background-image: url('./images/footerimage.svg');
+  position: relative;
+  bottom: -5000px;
+}
 
 .footer h3 {
   display: flex;
@@ -249,21 +270,19 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: #004360;
   width: 100%;
   height: 200px;
 }
 
 .logo {
-  width: 100px;
+  width: 90px;
   background: transparent;
   cursor: pointer;
 }
 
 .logo:hover {
-  transform: scale(1.15);
+  transform: scale(1.10);
   transition: all .5s ease-in-out;
-  transform: rotate(1turn)
 }
 
 .ytlogo {
@@ -272,9 +291,8 @@ body {
 }
 
 .ytlogo:hover {
-  transform: scale(1.15);
+  transform: scale(1.10);
   transition: all .5s ease-in-out;
-   transform: rotate(1turn)
 }
 
 .footer .popup {
@@ -287,4 +305,11 @@ body {
   color: #ffff;
   top: -210px;
   left: 1080px;
+}
+
+.paddingbetween {
+  padding-top: 150px;
+}
+.myworkscrollsection {
+  position: fixed;
 }
